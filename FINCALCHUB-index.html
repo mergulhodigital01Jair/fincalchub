@@ -1,0 +1,1177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FinCalc Hub — Free Online Finance Calculators</title>
+<meta name="description" content="Free finance calculators: mortgage, loan payment, compound interest, savings goal, debt payoff, FIRE number, and investment return. Instant results, no signup.">
+<meta name="keywords" content="mortgage calculator, loan calculator, compound interest calculator, savings calculator, debt payoff calculator, FIRE calculator, investment calculator, finance tools">
+<meta property="og:title" content="FinCalc Hub — Free Online Finance Calculators">
+<meta property="og:description" content="Free mortgage, loan, compound interest, savings, and debt payoff calculators. Make smarter money decisions today.">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://fincalchub.net/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Figtree:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2987762508906420" crossorigin="anonymous"></script>
+<style>
+:root{
+  --navy:#0B1426;
+  --navy2:#162040;
+  --navy3:#1E2F58;
+  --gold:#C9960C;
+  --gold2:#F0B429;
+  --gold3:#FDE68A;
+  --bg:#F8F7F2;
+  --bg2:#EFEDE4;
+  --bg3:#ffffff;
+  --ink:#0B1426;
+  --ink2:#3D4E6B;
+  --ink3:#7A8BA8;
+  --green:#0A7F5A;
+  --green2:#12A876;
+  --red:#C0392B;
+  --border:rgba(11,20,38,0.1);
+  --border2:rgba(11,20,38,0.06);
+  --radius:20px;
+  --radius-sm:12px;
+  --shadow:0 2px 20px rgba(11,20,38,0.08);
+  --shadow-lg:0 8px 40px rgba(11,20,38,0.12);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Figtree',sans-serif;
+  background:var(--bg);color:var(--ink);
+  font-size:16px;line-height:1.65;
+}
+
+/* ── NAV ── */
+nav{
+  position:sticky;top:0;z-index:100;
+  background:rgba(11,20,38,0.97);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(255,255,255,0.07);
+  padding:0 24px;
+}
+.nav-inner{
+  max-width:1160px;margin:0 auto;
+  display:flex;align-items:center;justify-content:space-between;
+  height:62px;
+}
+.logo{
+  font-family:'Instrument Serif',serif;
+  font-size:22px;color:#fff;text-decoration:none;
+  display:flex;align-items:center;gap:10px;
+}
+.logo-mark{
+  width:32px;height:32px;background:var(--gold2);
+  border-radius:8px;display:flex;align-items:center;
+  justify-content:center;font-family:'Figtree',sans-serif;
+  font-size:15px;font-weight:800;color:var(--navy);
+}
+.nav-links{display:flex;gap:28px;list-style:none;}
+.nav-links a{
+  text-decoration:none;color:rgba(255,255,255,0.6);
+  font-size:13px;font-weight:500;transition:color .2s;
+}
+.nav-links a:hover{color:#fff;}
+.nav-cta{
+  background:var(--gold2);color:var(--navy);
+  padding:8px 18px;border-radius:8px;
+  font-size:13px;font-weight:700;text-decoration:none;
+  transition:background .2s;
+}
+.nav-cta:hover{background:var(--gold3);}
+
+/* ── HERO ── */
+.hero{
+  background:var(--navy);
+  padding:80px 24px 72px;
+  position:relative;overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;
+  top:-120px;right:-120px;
+  width:500px;height:500px;
+  background:radial-gradient(circle,rgba(201,150,12,0.12) 0%,transparent 70%);
+  pointer-events:none;
+}
+.hero::after{
+  content:'';position:absolute;
+  bottom:-80px;left:-80px;
+  width:400px;height:400px;
+  background:radial-gradient(circle,rgba(30,47,88,0.8) 0%,transparent 70%);
+  pointer-events:none;
+}
+.hero-inner{
+  max-width:1160px;margin:0 auto;
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:64px;align-items:center;position:relative;z-index:1;
+}
+.hero-kicker{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(240,180,41,0.12);border:1px solid rgba(240,180,41,0.25);
+  color:var(--gold2);border-radius:20px;
+  padding:5px 14px;font-size:12px;font-weight:600;
+  letter-spacing:.04em;margin-bottom:24px;
+}
+.hero h1{
+  font-family:'Instrument Serif',serif;
+  font-size:clamp(38px,4.5vw,60px);
+  color:#fff;line-height:1.1;
+  margin-bottom:20px;
+  letter-spacing:-.01em;
+}
+.hero h1 span{color:var(--gold2);}
+.hero p{
+  font-size:17px;color:rgba(255,255,255,0.6);
+  max-width:460px;margin-bottom:36px;line-height:1.75;
+}
+.hero-stats{display:flex;gap:36px;}
+.hero-stat strong{
+  display:block;font-family:'Instrument Serif',serif;
+  font-size:30px;color:var(--gold2);
+}
+.hero-stat span{font-size:13px;color:rgba(255,255,255,0.5);}
+.hero-cards{display:flex;flex-direction:column;gap:12px;}
+.hero-card-mini{
+  background:rgba(255,255,255,0.06);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:14px;padding:16px 20px;
+  display:flex;align-items:center;gap:14px;
+  backdrop-filter:blur(4px);
+  transition:background .2s;
+}
+.hero-card-mini:hover{background:rgba(255,255,255,0.09);}
+.hcm-icon{font-size:22px;width:40px;text-align:center;}
+.hcm-text strong{display:block;color:#fff;font-size:14px;font-weight:600;}
+.hcm-text span{color:rgba(255,255,255,0.45);font-size:12px;}
+.hcm-val{
+  margin-left:auto;font-family:'Instrument Serif',serif;
+  font-size:16px;color:var(--gold2);font-weight:400;
+}
+
+/* ── AD ── */
+.ad-wrap{max-width:1160px;margin:0 auto;padding:28px 24px 0;}
+.ad-slot{
+  background:var(--bg2);border:1px dashed var(--border);
+  border-radius:var(--radius-sm);padding:18px;
+  text-align:center;color:var(--ink3);font-size:13px;
+}
+
+/* ── SECTION ── */
+.calcs-section{max-width:1160px;margin:0 auto;padding:40px 24px 80px;}
+.section-header{margin-bottom:44px;}
+.section-eyebrow{
+  font-size:11px;font-weight:700;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--gold);margin-bottom:10px;
+}
+.section-title{
+  font-family:'Instrument Serif',serif;
+  font-size:clamp(30px,3.5vw,44px);
+  letter-spacing:-.01em;margin-bottom:10px;
+}
+.section-sub{font-size:15px;color:var(--ink2);}
+
+/* ── CALC CARD ── */
+.calc-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(500px,1fr));
+  gap:22px;margin-bottom:32px;
+}
+.calc-card{
+  background:var(--bg3);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  overflow:hidden;box-shadow:var(--shadow);
+  transition:box-shadow .25s,transform .25s;
+  animation:fadeUp .5s ease both;
+}
+.calc-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-3px);}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
+.calc-card:nth-child(1){animation-delay:.04s;}
+.calc-card:nth-child(2){animation-delay:.09s;}
+.calc-card:nth-child(3){animation-delay:.14s;}
+.calc-card:nth-child(4){animation-delay:.19s;}
+.calc-card:nth-child(5){animation-delay:.24s;}
+.calc-card:nth-child(6){animation-delay:.29s;}
+.card-top-bar{height:4px;}
+.card-head{
+  padding:22px 26px 18px;
+  border-bottom:1px solid var(--border2);
+  display:flex;align-items:flex-start;gap:14px;
+}
+.card-icon{
+  width:46px;height:46px;border-radius:12px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:22px;flex-shrink:0;
+}
+.card-head-text h3{font-size:18px;font-weight:700;margin-bottom:3px;}
+.card-head-text p{font-size:13px;color:var(--ink2);}
+.card-body{padding:22px 26px;}
+
+/* ── INPUTS ── */
+.field-grid{display:grid;gap:12px;margin-bottom:14px;}
+.fg-2{grid-template-columns:1fr 1fr;}
+.fg-3{grid-template-columns:1fr 1fr 1fr;}
+.fg-1{grid-template-columns:1fr;}
+.field{display:flex;flex-direction:column;gap:5px;}
+.field label{
+  font-size:11px;font-weight:700;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--ink3);
+}
+.field input,.field select{
+  background:var(--bg);border:1.5px solid var(--border);
+  border-radius:10px;padding:10px 14px;
+  font-size:15px;font-weight:500;color:var(--ink);
+  font-family:'Figtree',sans-serif;
+  transition:border-color .2s,background .2s;outline:none;
+}
+.field input:focus,.field select:focus{
+  border-color:var(--gold);background:#FFFDF5;
+}
+.input-prefix{position:relative;}
+.input-prefix span{
+  position:absolute;left:12px;top:50%;transform:translateY(-50%);
+  font-size:15px;font-weight:600;color:var(--ink3);pointer-events:none;
+}
+.input-prefix input{padding-left:26px;}
+.input-suffix{position:relative;}
+.input-suffix span{
+  position:absolute;right:12px;top:50%;transform:translateY(-50%);
+  font-size:13px;font-weight:600;color:var(--ink3);pointer-events:none;
+}
+.input-suffix input{padding-right:30px;}
+.field input[type="range"]{
+  padding:4px 0;border:none;background:transparent;
+  accent-color:var(--gold);height:auto;
+}
+
+/* ── RESULTS ── */
+.result-box{
+  background:var(--bg);border:1.5px solid var(--border);
+  border-radius:var(--radius-sm);padding:18px 20px;
+  margin:14px 0;min-height:72px;transition:all .35s;
+}
+.result-box.lit{
+  border-color:var(--gold);
+  background:linear-gradient(135deg,#FFFCF0,#FFF9E6);
+}
+.r-main{
+  font-family:'Instrument Serif',serif;
+  font-size:34px;color:var(--navy);letter-spacing:-.01em;margin-bottom:4px;
+}
+.r-label{font-size:13px;color:var(--ink2);}
+.r-grid{display:grid;gap:10px;margin-top:10px;}
+.r-grid-2{grid-template-columns:1fr 1fr;}
+.r-grid-3{grid-template-columns:1fr 1fr 1fr;}
+.r-cell{
+  background:#fff;border:1px solid var(--border2);
+  border-radius:10px;padding:12px 14px;
+}
+.r-cell strong{display:block;font-size:18px;font-weight:700;}
+.r-cell span{font-size:11px;color:var(--ink3);text-transform:uppercase;letter-spacing:.04em;}
+.r-positive{color:var(--green);}
+.r-negative{color:var(--red);}
+.r-detail{
+  font-size:13px;color:var(--ink2);margin-top:10px;line-height:1.65;
+  border-top:1px solid var(--border2);padding-top:10px;
+}
+
+/* ── CHART BAR ── */
+.chart-bar-wrap{margin-top:12px;}
+.chart-bar-label{
+  display:flex;justify-content:space-between;
+  font-size:12px;color:var(--ink3);margin-bottom:5px;
+}
+.chart-bar-bg{
+  background:var(--bg2);border-radius:6px;
+  height:10px;overflow:hidden;
+}
+.chart-bar-fill{
+  height:100%;border-radius:6px;transition:width .7s cubic-bezier(.4,0,.2,1);
+}
+
+/* ── AMORTIZATION TABLE ── */
+.amort-table-wrap{
+  margin-top:12px;max-height:240px;overflow-y:auto;
+  border:1px solid var(--border2);border-radius:10px;
+}
+.amort-table{width:100%;border-collapse:collapse;font-size:13px;}
+.amort-table th{
+  background:var(--bg2);padding:8px 12px;
+  text-align:right;font-size:11px;font-weight:700;
+  letter-spacing:.04em;color:var(--ink3);
+  position:sticky;top:0;
+}
+.amort-table th:first-child{text-align:left;}
+.amort-table td{
+  padding:7px 12px;text-align:right;
+  border-top:1px solid var(--border2);color:var(--ink2);
+}
+.amort-table td:first-child{text-align:left;font-weight:600;color:var(--ink);}
+.amort-table tr:hover td{background:#FFFDF5;}
+
+/* ── BTN ── */
+.btn-calc{
+  width:100%;background:var(--navy);color:#fff;
+  border:none;border-radius:12px;
+  padding:14px 24px;font-family:'Figtree',sans-serif;
+  font-size:15px;font-weight:700;cursor:pointer;
+  transition:background .2s,transform .1s;
+  display:flex;align-items:center;justify-content:center;gap:8px;
+}
+.btn-calc:hover{background:var(--navy2);}
+.btn-calc:active{transform:scale(.98);}
+.btn-gold{background:var(--gold);color:var(--navy);}
+.btn-gold:hover{background:var(--gold2);}
+
+/* ── DISCLAIMER ── */
+.disc{
+  background:#FFF8E6;border:1px solid rgba(201,150,12,0.2);
+  border-radius:8px;padding:10px 14px;
+  font-size:12px;color:#7A5500;margin-bottom:14px;line-height:1.5;
+}
+
+/* ── INFO ── */
+.info-section{background:var(--navy);padding:72px 24px;color:#fff;}
+.info-inner{max-width:860px;margin:0 auto;}
+.info-inner h2{
+  font-family:'Instrument Serif',serif;
+  font-size:clamp(28px,3.5vw,40px);
+  color:#fff;margin-bottom:16px;
+}
+.info-inner p{
+  color:rgba(255,255,255,0.6);
+  margin-bottom:16px;line-height:1.85;font-size:15px;
+}
+.info-inner h3{
+  font-size:20px;font-weight:700;color:#fff;
+  margin:32px 0 10px;
+}
+.faq{margin-top:36px;}
+.faq-item{
+  border-top:1px solid rgba(255,255,255,0.08);
+  padding:18px 0;
+}
+.faq-q{font-size:16px;font-weight:600;color:#fff;margin-bottom:8px;}
+.faq-a{font-size:14px;color:rgba(255,255,255,0.55);line-height:1.75;}
+
+/* ── FOOTER ── */
+footer{
+  background:#060D1A;
+  color:rgba(255,255,255,0.45);
+  padding:44px 24px 32px;
+}
+.footer-grid{
+  max-width:1160px;margin:0 auto;
+  display:flex;justify-content:space-between;
+  align-items:flex-start;flex-wrap:wrap;gap:28px;
+}
+.footer-brand strong{
+  display:block;font-family:'Instrument Serif',serif;
+  font-size:20px;color:#fff;margin-bottom:6px;
+}
+.footer-brand span{font-size:13px;}
+.footer-links{display:flex;gap:22px;flex-wrap:wrap;}
+.footer-links a{
+  color:rgba(255,255,255,0.45);text-decoration:none;
+  font-size:13px;transition:color .2s;
+}
+.footer-links a:hover{color:#fff;}
+.footer-disc{
+  max-width:1160px;margin:24px auto 0;
+  padding-top:24px;border-top:1px solid rgba(255,255,255,0.06);
+  font-size:11px;line-height:1.7;color:rgba(255,255,255,0.3);
+}
+
+/* ── PAGE OVERLAY ── */
+.page-overlay{display:none;position:fixed;inset:0;z-index:200;background:var(--bg);overflow-y:auto;}
+.page-overlay.active{display:block;}
+.page-inner{max-width:840px;margin:0 auto;padding:44px 24px;}
+.back-btn{
+  display:inline-flex;align-items:center;gap:8px;
+  background:transparent;border:1.5px solid var(--border);
+  border-radius:10px;padding:9px 18px;
+  font-size:14px;font-weight:600;color:var(--ink2);cursor:pointer;
+  margin-bottom:36px;font-family:'Figtree',sans-serif;transition:all .2s;
+}
+.back-btn:hover{background:var(--bg2);color:var(--ink);}
+.legal h1{
+  font-family:'Instrument Serif',serif;
+  font-size:40px;margin-bottom:8px;
+}
+.legal .date{font-size:13px;color:var(--ink3);margin-bottom:36px;}
+.legal h2{font-size:22px;font-weight:700;margin:30px 0 10px;}
+.legal p,.legal li{color:var(--ink2);line-height:1.85;margin-bottom:12px;font-size:15px;}
+.legal ul{padding-left:20px;margin-bottom:14px;}
+
+/* ── RESPONSIVE ── */
+@media(max-width:768px){
+  .hero-inner{grid-template-columns:1fr;}
+  .hero-cards{display:none;}
+  .calc-grid{grid-template-columns:1fr;}
+  .fg-2,.fg-3{grid-template-columns:1fr;}
+  .r-grid-2,.r-grid-3{grid-template-columns:1fr 1fr;}
+  nav .nav-links,.nav-cta{display:none;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="logo"><span class="logo-mark">$</span> FinCalc Hub</a>
+    <ul class="nav-links">
+      <li><a href="#calculators">Calculators</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#" onclick="showPage('privacy')">Privacy</a></li>
+      <li><a href="#" onclick="showPage('terms')">Terms</a></li>
+    </ul>
+    <a href="#calculators" class="nav-cta">All Tools ↓</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-kicker">✦ Free · No Signup · Instant Results</div>
+      <h1>Make Smarter<br><span>Money Decisions</span></h1>
+      <p>Professional-grade finance calculators for mortgages, loans, savings, investments and retirement — completely free.</p>
+      <div class="hero-stats">
+        <div class="hero-stat"><strong>8</strong><span>Free tools</span></div>
+        <div class="hero-stat"><strong>$0</strong><span>Forever free</span></div>
+        <div class="hero-stat"><strong>100%</strong><span>Private</span></div>
+      </div>
+    </div>
+    <div class="hero-cards">
+      <div class="hero-card-mini"><div class="hcm-icon">🏠</div><div class="hcm-text"><strong>Mortgage Calculator</strong><span>Monthly payment + amortization</span></div><div class="hcm-val">→</div></div>
+      <div class="hero-card-mini"><div class="hcm-icon">📈</div><div class="hcm-text"><strong>Compound Interest</strong><span>Watch your money grow</span></div><div class="hcm-val">→</div></div>
+      <div class="hero-card-mini"><div class="hcm-icon">🎯</div><div class="hcm-text"><strong>FIRE Calculator</strong><span>Financial independence age</span></div><div class="hcm-val">→</div></div>
+      <div class="hero-card-mini"><div class="hcm-icon">💳</div><div class="hcm-text"><strong>Debt Payoff</strong><span>Avalanche vs Snowball</span></div><div class="hcm-val">→</div></div>
+    </div>
+  </div>
+</header>
+
+<!-- AD TOP -->
+<div class="ad-wrap">
+  <div class="ad-slot" style="max-width:728px;margin:0 auto;">
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-2987762508906420"
+         data-ad-slot="auto"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+</div>
+
+<!-- CALCULATORS -->
+<section class="calcs-section" id="calculators">
+  <div class="section-header">
+    <div class="section-eyebrow">Free Financial Tools</div>
+    <div class="section-title">All Calculators</div>
+    <div class="section-sub">Click any calculator below. All math happens in your browser — your data never leaves your device.</div>
+  </div>
+
+  <div class="calc-grid">
+
+    <!-- ══ MORTGAGE ══ -->
+    <div class="calc-card">
+      <div class="card-top-bar" style="background:linear-gradient(90deg,#0B1426,#1E2F58);"></div>
+      <div class="card-head">
+        <div class="card-icon" style="background:#F0F4FF;">🏠</div>
+        <div class="card-head-text"><h3>Mortgage Calculator</h3><p>Monthly payment, total interest paid, and full amortization schedule</p></div>
+      </div>
+      <div class="card-body">
+        <div class="disc">ℹ️ Results are estimates. Actual payments may vary based on taxes, insurance, and lender fees.</div>
+        <div class="field-grid fg-2">
+          <div class="field"><label>Home Price</label><div class="input-prefix"><span>$</span><input type="number" id="mort-price" placeholder="350,000" min="10000" max="10000000"></div></div>
+          <div class="field"><label>Down Payment</label><div class="input-prefix"><span>$</span><input type="number" id="mort-down" placeholder="70,000" min="0"></div></div>
+        </div>
+        <div class="field-grid fg-3">
+          <div class="field"><label>Interest Rate</label><div class="input-suffix"><input type="number" id="mort-rate" placeholder="6.5" step="0.1" min="0.1" max="25"><span>%</span></div></div>
+          <div class="field"><label>Loan Term</label><div class="input-suffix"><input type="number" id="mort-term" placeholder="30" min="1" max="50"><span>yrs</span></div></div>
+          <div class="field"><label>Start Year</label><input type="number" id="mort-year" placeholder="2025" min="2020" max="2050"></div>
+        </div>
+        <div id="mort-result" class="result-box"><div style="color:var(--ink3);font-size:14px;">Enter loan details above to calculate your mortgage payment</div></div>
+        <button class="btn-calc" onclick="calcMortgage()">🏠 Calculate Mortgage</button>
+      </div>
+    </div>
+
+    <!-- ══ COMPOUND INTEREST ══ -->
+    <div class="calc-card">
+      <div class="card-top-bar" style="background:linear-gradient(90deg,#C9960C,#F0B429);"></div>
+      <div class="card-head">
+        <div class="card-icon" style="background:#FFFBF0;">📈</div>
+        <div class="card-head-text"><h3>Compound Interest Calculator</h3><p>See how your investment grows over time with the power of compounding</p></div>
+      </div>
+      <div class="card-body">
+        <div class="field-grid fg-2">
+          <div class="field"><label>Initial Investment</label><div class="input-prefix"><span>$</span><input type="number" id="ci-principal" placeholder="10,000" min="0"></div></div>
+          <div class="field"><label>Monthly Contribution</label><div class="input-prefix"><span>$</span><input type="number" id="ci-monthly" placeholder="500" min="0"></div></div>
+        </div>
+        <div class="field-grid fg-3">
+          <div class="field"><label>Annual Return</label><div class="input-suffix"><input type="number" id="ci-rate" placeholder="7" step="0.1" min="0.1" max="50"><span>%</span></div></div>
+          <div class="field"><label>Years</label><div class="input-suffix"><input type="number" id="ci-years" placeholder="20" min="1" max="60"><span>yrs</span></div></div>
+          <div class="field"><label>Compounding</label>
+            <select id="ci-freq">
+              <option value="12">Monthly</option>
+              <option value="4">Quarterly</option>
+              <option value="2">Semi-Annual</option>
+              <option value="1">Annually</option>
+            </select>
+          </div>
+        </div>
+        <div id="ci-result" class="result-box"><div style="color:var(--ink3);font-size:14px;">Enter investment details to see growth projection</div></div>
+        <button class="btn-calc btn-gold" onclick="calcCompound()">📈 Calculate Growth</button>
+      </div>
+    </div>
+
+    <!-- ══ LOAN PAYMENT ══ -->
+    <div class="calc-card">
+      <div class="card-top-bar" style="background:linear-gradient(90deg,#0A7F5A,#12A876);"></div>
+      <div class="card-head">
+        <div class="card-icon" style="background:#F0FFF8;">💳</div>
+        <div class="card-head-text"><h3>Loan Payment Calculator</h3><p>Calculate monthly payment for any personal loan, auto loan, or student loan</p></div>
+      </div>
+      <div class="card-body">
+        <div class="field-grid fg-2">
+          <div class="field"><label>Loan Amount</label><div class="input-prefix"><span>$</span><input type="number" id="loan-amount" placeholder="25,000" min="100"></div></div>
+          <div class="field"><label>Annual Interest Rate</label><div class="input-suffix"><input type="number" id="loan-rate" placeholder="8.5" step="0.1" min="0.01" max="40"><span>%</span></div></div>
+        </div>
+        <div class="field-grid fg-2">
+          <div class="field"><label>Loan Term</label>
+            <select id="loan-term">
+              <option value="12">1 year (12 months)</option>
+              <option value="24">2 years (24 months)</option>
+              <option value="36">3 years (36 months)</option>
+              <option value="48">4 years (48 months)</option>
+              <option value="60" selected>5 years (60 months)</option>
+              <option value="72">6 years (72 months)</option>
+              <option value="84">7 years (84 months)</option>
+              <option value="120">10 years (120 months)</option>
+            </select>
+          </div>
+          <div class="field"><label>Loan Type</label>
+            <select id="loan-type">
+              <option value="personal">Personal Loan</option>
+              <option value="auto">Auto Loan</option>
+              <option value="student">Student Loan</option>
+              <option value="business">Business Loan</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+        </div>
+        <div id="loan-result" class="result-box"><div style="color:var(--ink3);font-size:14px;">Enter loan details to calculate your payment</div></div>
+        <button class="btn-calc" style="background:#0A7F5A;" onclick="calcLoan()">💳 Calculate Payment</button>
+      </div>
+    </div>
+
+    <!-- ══ SAVINGS GOAL ══ -->
+    <div class="calc-card">
+      <div class="card-top-bar" style="background:linear-gradient(90deg,#6B40E8,#9B70F0);"></div>
+      <div class="card-head">
+        <div class="card-icon" style="background:#F5F0FF;">🎯</div>
+        <div class="card-head-text"><h3>Savings Goal Calculator</h3><p>How much do you need to save monthly to reach your financial goal?</p></div>
+      </div>
+      <div class="card-body">
+        <div class="field-grid fg-2">
+          <div class="field"><label>Savings Goal</label><div class="input-prefix"><span>$</span><input type="number" id="sg-goal" placeholder="50,000" min="100"></div></div>
+          <div class="field"><label>Current Savings</label><div class="input-prefix"><span>$</span><input type="number" id="sg-current" placeholder="5,000" min="0"></div></div>
+        </div>
+        <div class="field-grid fg-3">
+          <div class="field"><label>Annual Return</label><div class="input-suffix"><input type="number" id="sg-rate" placeholder="4.5" step="0.1" min="0"><span>%</span></div></div>
+          <div class="field"><label>Target (Years)</label><div class="input-suffix"><input type="number" id="sg-years" placeholder="5" min="1" max="50"><span>yrs</span></div></div>
+          <div class="field"><label>Goal Type</label>
+            <select id="sg-type">
+              <option value="emergency">Emergency Fund</option>
+              <option value="vacation">Vacation</option>
+              <option value="car">Car Purchase</option>
+              <option value="house">House Down Payment</option>
+              <option value="education">Education</option>
+              <option value="retirement">Retirement</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+        </div>
+        <div id="sg-result" class="result-box"><div style="color:var(--ink3);font-size:14px;">Enter your goal details above</div></div>
+        <button class="btn-calc" style="background:#6B40E8;" onclick="calcSavings()">🎯 Calculate Savings Plan</button>
+      </div>
+    </div>
+
+    <!-- ══ DEBT PAYOFF ══ -->
+    <div class="calc-card">
+      <div class="card-top-bar" style="background:linear-gradient(90deg,#C0392B,#E74C3C);"></div>
+      <div class="card-head">
+        <div class="card-icon" style="background:#FFF0EE;">⚡</div>
+        <div class="card-head-text"><h3>Debt Payoff Calculator</h3><p>Compare Avalanche vs Snowball methods and find your debt-free date</p></div>
+      </div>
+      <div class="card-body">
+        <div class="field-grid fg-2">
+          <div class="field"><label>Total Debt Balance</label><div class="input-prefix"><span>$</span><input type="number" id="debt-balance" placeholder="15,000" min="100"></div></div>
+          <div class="field"><label>Average Interest Rate</label><div class="input-suffix"><input type="number" id="debt-rate" placeholder="19.5" step="0.1" min="0.1" max="80"><span>%</span></div></div>
+        </div>
+        <div class="field-grid fg-2">
+          <div class="field"><label>Monthly Payment</label><div class="input-prefix"><span>$</span><input type="number" id="debt-payment" placeholder="400" min="10"></div></div>
+          <div class="field"><label>Extra Monthly</label><div class="input-prefix"><span>$</span><input type="number" id="debt-extra" placeholder="100" min="0"></div></div>
+        </div>
+        <div id="debt-result" class="result-box"><div style="color:var(--ink3);font-size:14px;">Enter your debt details above</div></div>
+        <button class="btn-calc" style="background:#C0392B;" onclick="calcDebt()">⚡ Calculate Debt-Free Date</button>
+      </div>
+    </div>
+
+    <!-- ══ FIRE CALCULATOR ══ -->
+    <div class="calc-card">
+      <div class="card-top-bar" style="background:linear-gradient(90deg,#C9960C,#0B1426);"></div>
+      <div class="card-head">
+        <div class="card-icon" style="background:#FFFBF0;">🔥</div>
+        <div class="card-head-text"><h3>FIRE Calculator</h3><p>Financial Independence, Retire Early — find your number and target date</p></div>
+      </div>
+      <div class="card-body">
+        <div class="disc">ℹ️ Based on the 4% Safe Withdrawal Rate rule (Trinity Study). Results are projections, not guarantees.</div>
+        <div class="field-grid fg-3">
+          <div class="field"><label>Current Age</label><input type="number" id="fire-age" placeholder="30" min="18" max="70"></div>
+          <div class="field"><label>Current Savings</label><div class="input-prefix"><span>$</span><input type="number" id="fire-savings" placeholder="50,000" min="0"></div></div>
+          <div class="field"><label>Annual Income</label><div class="input-prefix"><span>$</span><input type="number" id="fire-income" placeholder="80,000" min="1000"></div></div>
+        </div>
+        <div class="field-grid fg-3">
+          <div class="field"><label>Annual Expenses</label><div class="input-prefix"><span>$</span><input type="number" id="fire-expenses" placeholder="50,000" min="1000"></div></div>
+          <div class="field"><label>Annual Return</label><div class="input-suffix"><input type="number" id="fire-return" placeholder="7" step="0.1" min="1" max="25"><span>%</span></div></div>
+          <div class="field"><label>Withdrawal Rate</label>
+            <select id="fire-swr">
+              <option value="3">3% (Very Conservative)</option>
+              <option value="3.5">3.5% (Conservative)</option>
+              <option value="4" selected>4% (Standard)</option>
+              <option value="4.5">4.5% (Moderate)</option>
+              <option value="5">5% (Aggressive)</option>
+            </select>
+          </div>
+        </div>
+        <div id="fire-result" class="result-box"><div style="color:var(--ink3);font-size:14px;">Enter your financial details to find your FIRE number</div></div>
+        <button class="btn-calc btn-gold" onclick="calcFIRE()">🔥 Calculate FIRE Number</button>
+      </div>
+    </div>
+
+  </div><!-- /calc-grid -->
+
+  <!-- AD MID -->
+  <div class="ad-slot" style="max-width:728px;margin:0 auto 40px;">
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-2987762508906420"
+         data-ad-slot="auto"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <!-- ══ BUDGET CALCULATOR (full width) ══ -->
+  <div class="calc-card" style="margin-bottom:22px;">
+    <div class="card-top-bar" style="background:linear-gradient(90deg,#0A7F5A,#C9960C);"></div>
+    <div class="card-head">
+      <div class="card-icon" style="background:#F0FFF8;">📊</div>
+      <div class="card-head-text"><h3>50/30/20 Budget Calculator</h3><p>Enter your monthly take-home income and get an instant budget breakdown following the 50/30/20 rule</p></div>
+    </div>
+    <div class="card-body">
+      <div style="display:grid;grid-template-columns:1fr 2fr;gap:24px;align-items:start;">
+        <div>
+          <div class="field-grid fg-1">
+            <div class="field"><label>Monthly Take-Home Income</label><div class="input-prefix"><span>$</span><input type="number" id="budget-income" placeholder="5,000" min="100"></div></div>
+            <div class="field"><label>Budget Method</label>
+              <select id="budget-method">
+                <option value="503020">50/30/20 Rule (standard)</option>
+                <option value="603010">60/30/10 (aggressive saving)</option>
+                <option value="702010">70/20/10 (tight budget)</option>
+              </select>
+            </div>
+          </div>
+          <button class="btn-calc" style="margin-top:14px;" onclick="calcBudget()">📊 Create Budget Plan</button>
+        </div>
+        <div id="budget-result" class="result-box" style="height:100%;min-height:120px;">
+          <div style="color:var(--ink3);font-size:14px;">Enter your income to get a personalized budget breakdown</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ ROI CALCULATOR (full width) ══ -->
+  <div class="calc-card">
+    <div class="card-top-bar" style="background:linear-gradient(90deg,#1E2F58,#6B40E8);"></div>
+    <div class="card-head">
+      <div class="card-icon" style="background:#F0F4FF;">💰</div>
+      <div class="card-head-text"><h3>ROI Calculator</h3><p>Calculate Return on Investment, annualized ROI, and break-even analysis</p></div>
+    </div>
+    <div class="card-body">
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:14px;">
+        <div class="field"><label>Initial Investment</label><div class="input-prefix"><span>$</span><input type="number" id="roi-initial" placeholder="10,000" min="1"></div></div>
+        <div class="field"><label>Final Value</label><div class="input-prefix"><span>$</span><input type="number" id="roi-final" placeholder="14,500" min="0"></div></div>
+        <div class="field"><label>Time Held (Years)</label><div class="input-suffix"><input type="number" id="roi-years" placeholder="3" step="0.5" min="0.1" max="50"><span>yrs</span></div></div>
+        <div class="field"><label>Investment Type</label>
+          <select id="roi-type">
+            <option value="stock">Stock / ETF</option>
+            <option value="real_estate">Real Estate</option>
+            <option value="business">Business</option>
+            <option value="bond">Bond</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+      </div>
+      <div id="roi-result" class="result-box"><div style="color:var(--ink3);font-size:14px;">Enter investment details to calculate ROI</div></div>
+      <button class="btn-calc" style="background:#1E2F58;margin-top:14px;" onclick="calcROI()">💰 Calculate ROI</button>
+    </div>
+  </div>
+
+</section>
+
+<!-- INFO / SEO -->
+<section class="info-section" id="about">
+  <div class="info-inner">
+    <h2>About FinCalc Hub</h2>
+    <p>FinCalc Hub is a free collection of financial calculators designed to help you make better money decisions. Whether you're buying a home, paying off debt, planning for retirement, or simply trying to grow your savings — our tools give you instant, accurate estimates with no signup required.</p>
+    <p>Every calculation happens entirely in your browser. We never collect or store your financial data. Your privacy is guaranteed.</p>
+
+    <h3>Mortgage Calculator</h3>
+    <p>Our mortgage calculator uses the standard amortization formula to compute your monthly principal and interest payment based on loan amount, interest rate, and term. It also generates a complete amortization schedule showing exactly how much of each payment goes toward principal vs. interest over the life of the loan.</p>
+
+    <h3>Compound Interest Calculator</h3>
+    <p>Compound interest is often called the "eighth wonder of the world" — money earning returns on its returns creates exponential growth over time. Our calculator applies the standard compound interest formula, accounting for both initial principal and regular monthly contributions, to project your investment value at any future date.</p>
+
+    <h3>FIRE Calculator</h3>
+    <p>The Financial Independence, Retire Early movement is based on the concept that once your investment portfolio is large enough to sustain your annual expenses using a safe withdrawal rate (typically 4%), you are financially independent. Our FIRE calculator uses this methodology to project both your FIRE number and the age at which you'll reach it given your current savings rate.</p>
+
+    <h3>Debt Payoff Calculator</h3>
+    <p>The Avalanche method (paying highest-interest debt first) minimizes total interest paid. The Snowball method (paying smallest balance first) provides psychological wins. Our debt payoff calculator shows you exactly how long it will take to become debt-free and how much total interest you'll pay under your current payment plan.</p>
+
+    <h3>50/30/20 Budget Rule</h3>
+    <p>The 50/30/20 rule, popularized by Senator Elizabeth Warren in her book "All Your Worth," suggests allocating 50% of after-tax income to needs, 30% to wants, and 20% to savings and debt repayment. Our budget calculator instantly applies this framework to your income and shows dollar amounts for each category.</p>
+
+    <div class="faq">
+      <h3>Frequently Asked Questions</h3>
+      <div class="faq-item">
+        <div class="faq-q">Are these calculations accurate?</div>
+        <div class="faq-a">Our calculators use standard financial formulas and are accurate for estimation purposes. Mortgage payments use the standard amortization formula; compound interest uses the continuous/periodic compounding formula; FIRE uses the 4% rule. For binding financial decisions, consult a certified financial advisor.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Is my financial data stored anywhere?</div>
+        <div class="faq-a">No. Every calculation runs in JavaScript in your browser. No numbers you enter are ever sent to any server. We have no access to any data you input into these tools.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What is a good mortgage interest rate?</div>
+        <div class="faq-a">Mortgage rates vary with the economic environment, your credit score, and loan type. Historically, rates below 4% are excellent, 4–6% are moderate, and rates above 7% are higher. Always shop multiple lenders to find the best rate available for your situation.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What is the 4% rule in the FIRE calculator?</div>
+        <div class="faq-a">The 4% rule states that you can safely withdraw 4% of your portfolio per year in retirement without running out of money over a 30-year period. This is based on the Trinity Study (1998) and remains the most widely cited guideline in retirement planning, though some experts suggest 3.5% for longer retirements.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What's the difference between APR and interest rate on a mortgage?</div>
+        <div class="faq-a">The interest rate is the basic cost of borrowing principal. APR (Annual Percentage Rate) includes the interest rate plus other costs like origination fees, mortgage insurance, and certain closing costs — making it a more complete measure of loan cost. Our mortgage calculator uses interest rate; your actual APR may be slightly higher.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <strong>FinCalc Hub</strong>
+      <span>Free finance calculators. Make better money decisions.</span>
+    </div>
+    <div class="footer-links">
+      <a href="#" onclick="showPage('about-page')">About</a>
+      <a href="#" onclick="showPage('privacy')">Privacy Policy</a>
+      <a href="#" onclick="showPage('terms')">Terms of Use</a>
+      <a href="mailto:contact@fincalchub.net">Contact</a>
+    </div>
+  </div>
+  <div class="footer-disc">
+    <strong style="color:rgba(255,255,255,0.4);">Disclaimer:</strong> FinCalc Hub provides financial calculators for informational and educational purposes only. Results are estimates and do not constitute financial, investment, legal, or tax advice. Always consult a qualified financial professional before making financial decisions. Past investment performance does not guarantee future results.
+  </div>
+</footer>
+
+<!-- PRIVACY -->
+<div class="page-overlay" id="privacy">
+  <div class="page-inner">
+    <button class="back-btn" onclick="hidePage('privacy')">← Back to Home</button>
+    <div class="legal">
+      <h1>Privacy Policy</h1>
+      <div class="date">Last updated: January 1, 2025</div>
+      <p>FinCalc Hub ("we") operates this website. This policy describes how we handle information when you use our free finance calculators.</p>
+      <h2>No Financial Data Collected</h2>
+      <p>All calculations on FinCalc Hub run entirely in your browser using JavaScript. We do not transmit, log, or store any financial data you enter — including income, loan amounts, debt balances, savings, or investment figures. Your financial information never leaves your device.</p>
+      <h2>Analytics</h2>
+      <p>We use Google Analytics to collect anonymous, aggregated data such as page views, geographic region, and browser type. This data is non-personally identifiable and cannot be linked back to any individual.</p>
+      <h2>Advertising</h2>
+      <p>We display ads via Google AdSense. Google may use cookies to personalize ads based on your browsing history. You may opt out at <a href="https://www.google.com/settings/ads" style="color:var(--gold);">google.com/settings/ads</a>. We do not control the content of Google AdSense advertisements.</p>
+      <h2>Cookies</h2>
+      <p>We use cookies only for analytics and advertising purposes. No cookies are used to store calculator results or financial data. You may disable cookies in your browser settings at any time.</p>
+      <h2>Financial Disclaimer</h2>
+      <p>FinCalc Hub provides calculators for informational purposes only. Nothing on this site constitutes financial, investment, or legal advice.</p>
+      <h2>Children</h2>
+      <p>Our service is not directed to individuals under 13. We do not knowingly collect data from children.</p>
+      <h2>Contact</h2>
+      <p>Questions about this Privacy Policy? Email: contact@fincalchub.net</p>
+    </div>
+  </div>
+</div>
+
+<!-- TERMS -->
+<div class="page-overlay" id="terms">
+  <div class="page-inner">
+    <button class="back-btn" onclick="hidePage('terms')">← Back to Home</button>
+    <div class="legal">
+      <h1>Terms of Use</h1>
+      <div class="date">Last updated: January 1, 2025</div>
+      <p>By using FinCalc Hub, you agree to these Terms of Use. If you do not agree, please discontinue use of the service.</p>
+      <h2>Informational Purpose Only</h2>
+      <p>FinCalc Hub provides financial calculators strictly for informational and educational purposes. Calculator results are estimates based on standard financial formulas and do not constitute financial, investment, tax, or legal advice. Do not make financial decisions based solely on these results.</p>
+      <h2>No Professional Advice</h2>
+      <p>FinCalc Hub is not a registered investment advisor, broker-dealer, financial planner, or tax professional. For advice specific to your situation, consult a qualified financial advisor, accountant, or attorney.</p>
+      <h2>Accuracy Disclaimer</h2>
+      <p>While we strive for accuracy, results may vary from actual financial products due to fees, taxes, insurance, rate changes, and other factors not captured by our formulas. We make no warranty as to the accuracy or completeness of any calculations.</p>
+      <h2>Permitted Use</h2>
+      <ul>
+        <li>Free personal use of all calculators is permitted without restriction.</li>
+        <li>Reproducing or reselling our site code or design is not permitted.</li>
+        <li>Automated scraping or bot traffic is prohibited.</li>
+        <li>You may not misrepresent FinCalc Hub as providing official financial guidance.</li>
+      </ul>
+      <h2>Limitation of Liability</h2>
+      <p>FinCalc Hub and its operators shall not be liable for any financial losses, errors, or decisions made based on the use of our tools. Use at your own risk.</p>
+      <h2>Investment Risk Notice</h2>
+      <p>Projected investment returns shown in our calculators assume constant rates and do not reflect market volatility, inflation, or taxes. Actual investment returns vary and past performance does not guarantee future results.</p>
+      <h2>Changes</h2>
+      <p>We reserve the right to update these Terms at any time. Continued use constitutes acceptance of any updates.</p>
+      <h2>Contact</h2>
+      <p>contact@fincalchub.net</p>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT PAGE -->
+<div class="page-overlay" id="about-page">
+  <div class="page-inner">
+    <button class="back-btn" onclick="hidePage('about-page')">← Back to Home</button>
+    <div class="legal">
+      <h1>About FinCalc Hub</h1>
+      <div class="date">Free financial tools since 2025</div>
+      <p>FinCalc Hub was built to give everyone access to the same financial calculation tools that were once available only through expensive software or financial advisors. We believe that understanding your money shouldn't cost money.</p>
+      <p>Whether you're planning to buy a home, pay off debt, save for retirement, or simply understand your monthly budget — our calculators provide instant, accurate results using the same formulas trusted by financial professionals worldwide.</p>
+
+      <h2>Our Calculators</h2>
+      <p>FinCalc Hub currently offers 8 free finance calculators:</p>
+      <ul>
+        <li><strong>Mortgage Calculator</strong> — Calculate your monthly mortgage payment, total interest paid, and view a full amortization table broken down by year. Supports custom home price, down payment, interest rate, and loan term.</li>
+        <li><strong>Compound Interest Calculator</strong> — See how your investments grow over time with the power of compound interest. Add monthly contributions and compare different compounding frequencies.</li>
+        <li><strong>Loan Payment Calculator</strong> — Find your monthly payment for any personal loan, auto loan, or student loan. See total interest paid and full repayment cost upfront.</li>
+        <li><strong>Savings Goal Calculator</strong> — Figure out exactly how much you need to save each month to reach any financial goal by a target date, accounting for your existing savings and interest rate.</li>
+        <li><strong>Debt Payoff Calculator</strong> — Enter any debt balance, rate, and monthly payment to see your exact debt-free date and total interest you'll pay over time.</li>
+        <li><strong>FIRE Calculator</strong> — Calculate your Financial Independence number using the 4% rule and estimate how many years until you can retire early based on your savings rate.</li>
+        <li><strong>50/30/20 Budget Calculator</strong> — Enter your income and instantly get a recommended budget split: 50% needs, 30% wants, 20% savings — the classic personal finance framework.</li>
+        <li><strong>ROI Calculator</strong> — Calculate the return on investment and annualized return for any investment, comparing your gain against your original cost.</li>
+      </ul>
+
+      <h2>Privacy First</h2>
+      <p>No financial data you enter is ever transmitted to our servers. All calculations happen entirely in your browser using JavaScript. We do not log, store, or track any individual calculator inputs — including income, debt balances, loan amounts, or investment figures. Your financial information never leaves your device.</p>
+
+      <h2>Financial Disclaimer</h2>
+      <p>FinCalc Hub provides calculators for informational and educational purposes only. Results are estimates based on standard financial formulas and do not constitute financial, investment, tax, or legal advice. Always consult a qualified financial advisor before making major financial decisions.</p>
+
+      <h2>How We Make Money</h2>
+      <p>FinCalc Hub is completely free to use and supported by display advertising through Google AdSense. The ads you see help us keep the service running and free for everyone.</p>
+
+      <h2>Contact</h2>
+      <p>Have a suggestion for a new calculator, found a bug, or have feedback? We'd love to hear from you: <a href="mailto:contact@fincalchub.net" style="color:var(--gold);">contact@fincalchub.net</a></p>
+    </div>
+  </div>
+</div>
+
+<script>
+// ── UTILS ──
+const $ = id => document.getElementById(id);
+const fv = id => parseFloat($(id).value) || 0;
+const sv = id => $(id).value;
+const fmt = n => '$' + Math.abs(n).toLocaleString('en-US', {minimumFractionDigits:0, maximumFractionDigits:0});
+const fmtD = n => '$' + Math.abs(n).toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2});
+const pct = n => (n*100).toFixed(1) + '%';
+
+function showResult(id, html) {
+  const el = $(id);
+  el.innerHTML = html;
+  el.classList.add('lit');
+}
+function showPage(id){$(id).classList.add('active');window.scrollTo(0,0);}
+function hidePage(id){$(id).classList.remove('active');}
+
+function bar(fillPct, color, label1, label2) {
+  return `<div class="chart-bar-wrap">
+    <div class="chart-bar-label"><span>${label1}</span><span>${label2}</span></div>
+    <div class="chart-bar-bg"><div class="chart-bar-fill" style="width:${Math.min(100,fillPct).toFixed(1)}%;background:${color};"></div></div>
+  </div>`;
+}
+
+// ── MORTGAGE ──
+function calcMortgage() {
+  const price = fv('mort-price'), down = fv('mort-down');
+  const annualRate = fv('mort-rate'), termYears = fv('mort-term');
+  if (!price || !annualRate || !termYears) { showResult('mort-result','<div style="color:var(--red)">Please fill in all required fields.</div>'); return; }
+  const principal = price - down;
+  if (principal <= 0) { showResult('mort-result','<div style="color:var(--red)">Down payment cannot exceed home price.</div>'); return; }
+  const r = annualRate / 100 / 12, n = termYears * 12;
+  const monthly = r === 0 ? principal / n : principal * (r * Math.pow(1+r,n)) / (Math.pow(1+r,n)-1);
+  const totalPaid = monthly * n;
+  const totalInterest = totalPaid - principal;
+  const intPct = totalInterest / totalPaid;
+  // Build amortization (yearly summary)
+  let rows = '', balance = principal;
+  const yearlyRows = [];
+  for (let m = 1; m <= n; m++) {
+    const intPayment = balance * r;
+    const prinPayment = monthly - intPayment;
+    balance -= prinPayment;
+    if (m % 12 === 0 || m === n) {
+      yearlyRows.push({yr: Math.ceil(m/12), bal: Math.max(0, balance), intPaid: intPayment * (m % 12 || 12)});
+    }
+  }
+  const tableRows = yearlyRows.slice(0, 10).map(r =>
+    `<tr><td>Year ${r.yr}</td><td>${fmtD(monthly)}</td><td>${fmtD(r.intPaid)}</td><td>${fmt(r.bal)}</td></tr>`
+  ).join('');
+
+  showResult('mort-result', `
+    <div class="r-main">${fmtD(monthly)}<span style="font-size:18px;color:var(--ink2);">/mo</span></div>
+    <div class="r-label">Principal & Interest (P&I)</div>
+    <div class="r-grid r-grid-3" style="margin-top:12px;">
+      <div class="r-cell"><strong>${fmt(principal)}</strong><span>Loan Amount</span></div>
+      <div class="r-cell"><strong class="r-negative">${fmt(totalInterest)}</strong><span>Total Interest</span></div>
+      <div class="r-cell"><strong>${fmt(totalPaid)}</strong><span>Total Cost</span></div>
+    </div>
+    ${bar(intPct*100, '#C0392B', 'Principal ' + fmt(principal), 'Interest ' + fmt(totalInterest))}
+    <div style="font-size:13px;font-weight:600;color:var(--ink2);margin:14px 0 6px;">Yearly Summary (first 10 years)</div>
+    <div class="amort-table-wrap">
+      <table class="amort-table">
+        <thead><tr><th>Year</th><th>Payment</th><th>Interest</th><th>Balance</th></tr></thead>
+        <tbody>${tableRows}</tbody>
+      </table>
+    </div>
+  `);
+}
+
+// ── COMPOUND INTEREST ──
+function calcCompound() {
+  const principal = fv('ci-principal'), monthly = fv('ci-monthly');
+  const rate = fv('ci-rate'), years = fv('ci-years'), freq = parseInt(sv('ci-freq'));
+  if (!rate || !years) { showResult('ci-result','<div style="color:var(--red)">Please fill in all fields.</div>'); return; }
+  const r = rate / 100 / freq, n = freq * years;
+  const futPrincipal = principal * Math.pow(1 + r, n);
+  const futContrib = monthly > 0 ? monthly * (Math.pow(1+r,n)-1)/r * (freq/12) : 0;
+  const futureValue = futPrincipal + futContrib;
+  const totalContrib = principal + monthly * 12 * years;
+  const totalInterest = futureValue - totalContrib;
+  const contribPct = (totalContrib / futureValue) * 100;
+
+  showResult('ci-result', `
+    <div class="r-main">${fmt(futureValue)}</div>
+    <div class="r-label">Future Value after ${years} years at ${rate}% annual return</div>
+    <div class="r-grid r-grid-3" style="margin-top:12px;">
+      <div class="r-cell"><strong>${fmt(totalContrib)}</strong><span>Total Invested</span></div>
+      <div class="r-cell"><strong class="r-positive">${fmt(totalInterest)}</strong><span>Interest Earned</span></div>
+      <div class="r-cell"><strong>${(futureValue/totalContrib).toFixed(2)}x</strong><span>Multiplier</span></div>
+    </div>
+    ${bar(contribPct, '#C9960C', 'Your money ' + fmt(totalContrib), 'Interest ' + fmt(totalInterest))}
+    <div class="r-detail">Monthly contribution of ${fmtD(monthly)} grows to ${fmt(futContrib)} in gains. Your initial ${fmt(principal)} grows to ${fmt(futPrincipal)}.</div>
+  `);
+}
+
+// ── LOAN ──
+function calcLoan() {
+  const amount = fv('loan-amount'), rate = fv('loan-rate'), term = parseInt(sv('loan-term'));
+  if (!amount || !rate) { showResult('loan-result','<div style="color:var(--red)">Please fill in all required fields.</div>'); return; }
+  const r = rate / 100 / 12;
+  const monthly = r === 0 ? amount / term : amount * (r * Math.pow(1+r,term)) / (Math.pow(1+r,term)-1);
+  const totalPaid = monthly * term;
+  const totalInterest = totalPaid - amount;
+  const intPct = (totalInterest / totalPaid) * 100;
+
+  showResult('loan-result', `
+    <div class="r-main">${fmtD(monthly)}<span style="font-size:18px;color:var(--ink2);">/mo</span></div>
+    <div class="r-label">${sv('loan-type').replace('_',' ')} · ${term} months at ${rate}%</div>
+    <div class="r-grid r-grid-3" style="margin-top:12px;">
+      <div class="r-cell"><strong>${fmt(amount)}</strong><span>Loan Amount</span></div>
+      <div class="r-cell"><strong class="r-negative">${fmt(totalInterest)}</strong><span>Total Interest</span></div>
+      <div class="r-cell"><strong>${fmt(totalPaid)}</strong><span>Total Repaid</span></div>
+    </div>
+    ${bar(intPct, '#C0392B', 'Principal ' + fmt(amount), 'Interest ' + fmt(totalInterest))}
+    <div class="r-detail">Paying ${fmtD(monthly)}/month for ${Math.floor(term/12)} years ${term%12} months. Early payoff saves on interest — use the extra payment field above to model this.</div>
+  `);
+}
+
+// ── SAVINGS GOAL ──
+function calcSavings() {
+  const goal = fv('sg-goal'), current = fv('sg-current');
+  const rate = fv('sg-rate'), years = fv('sg-years');
+  if (!goal || !years) { showResult('sg-result','<div style="color:var(--red)">Please fill in goal amount and target years.</div>'); return; }
+  const r = rate / 100 / 12, n = years * 12;
+  const fvCurrent = current * Math.pow(1+r, n);
+  const remaining = goal - fvCurrent;
+  const monthly = remaining <= 0 ? 0 : (r === 0 ? remaining / n : remaining * r / (Math.pow(1+r,n)-1));
+  const totalSaved = current + monthly * n;
+  const gap = goal - current;
+  const alreadyHave = (current / goal) * 100;
+
+  showResult('sg-result', `
+    <div class="r-main" style="color:${remaining <= 0 ? 'var(--green)' : 'var(--navy)'}">
+      ${remaining <= 0 ? 'Already on track! ✓' : fmtD(monthly) + '/mo'}
+    </div>
+    <div class="r-label">${remaining <= 0 ? 'Your current savings already exceed your goal timeline' : `Monthly savings needed to reach ${fmt(goal)} in ${years} years`}</div>
+    <div class="r-grid r-grid-3" style="margin-top:12px;">
+      <div class="r-cell"><strong>${fmt(goal)}</strong><span>Goal</span></div>
+      <div class="r-cell"><strong class="r-positive">${fmt(current)}</strong><span>Current Savings</span></div>
+      <div class="r-cell"><strong>${fmt(gap)}</strong><span>Gap to Fill</span></div>
+    </div>
+    ${bar(alreadyHave, '#0A7F5A', `You have ${pct(current/goal)}`, `Need ${pct(gap/goal)} more`)}
+    <div class="r-detail">With ${rate}% annual return, your ${fmt(current)} grows to ${fmt(fvCurrent.toFixed(0))} in ${years} years. Total invested: ${fmt(totalSaved)}.</div>
+  `);
+}
+
+// ── DEBT PAYOFF ──
+function calcDebt() {
+  const balance = fv('debt-balance'), rate = fv('debt-rate');
+  let payment = fv('debt-payment'), extra = fv('debt-extra');
+  if (!balance || !rate) { showResult('debt-result','<div style="color:var(--red)">Please fill in balance and interest rate.</div>'); return; }
+  const monthlyRate = rate / 100 / 12;
+  const minPayment = balance * monthlyRate * 1.02;
+  if (payment < minPayment) payment = Math.ceil(minPayment + 1);
+  const totalPayment = payment + extra;
+  // Standard payoff
+  let bal = balance, months = 0, totalInt = 0;
+  while (bal > 0 && months < 600) {
+    const intCharge = bal * monthlyRate;
+    totalInt += intCharge;
+    const prinPay = Math.min(totalPayment - intCharge, bal);
+    bal -= prinPay;
+    months++;
+  }
+  // Without extra
+  let balStd = balance, monthsStd = 0, totalIntStd = 0;
+  while (balStd > 0 && monthsStd < 600) {
+    const intCharge = balStd * monthlyRate;
+    totalIntStd += intCharge;
+    const prinPay = Math.min(payment - intCharge, balStd);
+    balStd -= prinPay;
+    monthsStd++;
+  }
+  const savedMonths = monthsStd - months;
+  const savedInt = totalIntStd - totalInt;
+  const now = new Date();
+  const debtFreeDate = new Date(now.getFullYear(), now.getMonth() + months);
+  const debtFreeDateStr = debtFreeDate.toLocaleDateString('en-US',{month:'long',year:'numeric'});
+
+  showResult('debt-result', `
+    <div class="r-main" style="color:var(--green)">${debtFreeDateStr}</div>
+    <div class="r-label">Debt-free date · ${months} months from today</div>
+    <div class="r-grid r-grid-3" style="margin-top:12px;">
+      <div class="r-cell"><strong>${fmt(totalInt)}</strong><span>Total Interest</span></div>
+      <div class="r-cell"><strong class="r-positive">${fmt(savedInt)}</strong><span>Interest Saved*</span></div>
+      <div class="r-cell"><strong class="r-positive">${savedMonths} mo</strong><span>Months Saved*</span></div>
+    </div>
+    ${bar(((totalInt)/(balance+totalInt))*100, '#C0392B', 'Principal ' + fmt(balance), 'Interest ' + fmt(totalInt))}
+    <div class="r-detail">*Compared to paying ${fmtD(payment)}/month with no extra payment. Your extra ${fmtD(extra)}/mo saves you ${savedMonths} months and ${fmt(savedInt)} in interest.</div>
+  `);
+}
+
+// ── FIRE ──
+function calcFIRE() {
+  const age = fv('fire-age'), savings = fv('fire-savings');
+  const income = fv('fire-income'), expenses = fv('fire-expenses');
+  const annualReturn = fv('fire-return'), swr = parseFloat(sv('fire-swr'));
+  if (!age || !income || !expenses) { showResult('fire-result','<div style="color:var(--red)">Please fill in all fields.</div>'); return; }
+  const fireNumber = expenses / (swr / 100);
+  const annualSavings = income - expenses;
+  if (annualSavings <= 0) {
+    showResult('fire-result','<div style="color:var(--red)">Your expenses exceed your income. Reducing expenses will accelerate your FIRE date.</div>');
+    return;
+  }
+  const savingsRate = annualSavings / income;
+  const r = annualReturn / 100;
+  // Simulate year by year
+  let portfolio = savings, yearsToFire = 0;
+  while (portfolio < fireNumber && yearsToFire < 100) {
+    portfolio = portfolio * (1 + r) + annualSavings;
+    yearsToFire++;
+  }
+  const fireAge = age + yearsToFire;
+  const currentPct = (savings / fireNumber) * 100;
+
+  showResult('fire-result', `
+    <div class="r-main" style="color:var(--gold)">${fmt(fireNumber)}</div>
+    <div class="r-label">Your FIRE Number (${swr}% withdrawal rate)</div>
+    <div class="r-grid r-grid-3" style="margin-top:12px;">
+      <div class="r-cell"><strong class="r-positive">${fireAge}</strong><span>FIRE Age</span></div>
+      <div class="r-cell"><strong>${yearsToFire}</strong><span>Years to FIRE</span></div>
+      <div class="r-cell"><strong>${(savingsRate*100).toFixed(1)}%</strong><span>Savings Rate</span></div>
+    </div>
+    ${bar(Math.min(currentPct, 100), '#C9960C', `Current: ${fmt(savings)} (${currentPct.toFixed(1)}%)`, `FIRE: ${fmt(fireNumber)}`)}
+    <div class="r-detail">Annual savings: ${fmt(annualSavings)} · Current portfolio covers ${currentPct.toFixed(1)}% of FIRE target. Increasing savings rate by 5% could significantly accelerate your timeline.</div>
+  `);
+}
+
+// ── BUDGET ──
+function calcBudget() {
+  const income = fv('budget-income'), method = sv('budget-method');
+  if (!income) { showResult('budget-result','<div style="color:var(--red)">Please enter your income.</div>'); return; }
+  let n, w, s;
+  if (method === '503020') { n=0.5; w=0.3; s=0.2; }
+  else if (method === '603010') { n=0.6; w=0.3; s=0.1; }
+  else { n=0.7; w=0.2; s=0.1; }
+  const needs=income*n, wants=income*w, savs=income*s;
+
+  showResult('budget-result', `
+    <div class="r-grid r-grid-3">
+      <div class="r-cell" style="border-top:3px solid #0A7F5A;">
+        <strong class="r-positive">${fmt(needs)}</strong>
+        <span>NEEDS ${(n*100).toFixed(0)}%</span>
+        <div style="font-size:11px;color:var(--ink3);margin-top:4px;">Rent, groceries, utilities, transport</div>
+      </div>
+      <div class="r-cell" style="border-top:3px solid var(--gold);">
+        <strong style="color:var(--gold)">${fmt(wants)}</strong>
+        <span>WANTS ${(w*100).toFixed(0)}%</span>
+        <div style="font-size:11px;color:var(--ink3);margin-top:4px;">Dining, entertainment, hobbies</div>
+      </div>
+      <div class="r-cell" style="border-top:3px solid #6B40E8;">
+        <strong style="color:#6B40E8">${fmt(savs)}</strong>
+        <span>SAVINGS ${(s*100).toFixed(0)}%</span>
+        <div style="font-size:11px;color:var(--ink3);margin-top:4px;">Emergency fund, investments, debt</div>
+      </div>
+    </div>
+    <div class="r-detail">Monthly take-home: ${fmt(income)}. The ${method.replace(/(\d)(?=\d)/g,'$1/')} rule is a guideline — adjust based on your actual cost of living and financial goals.</div>
+  `);
+}
+
+// ── ROI ──
+function calcROI() {
+  const initial = fv('roi-initial'), final = fv('roi-final'), years = fv('roi-years');
+  if (!initial || !years) { showResult('roi-result','<div style="color:var(--red)">Please fill in initial investment and time held.</div>'); return; }
+  const totalReturn = final - initial;
+  const roiPct = (totalReturn / initial) * 100;
+  const cagr = (Math.pow(final / initial, 1 / years) - 1) * 100;
+  const isPositive = totalReturn >= 0;
+
+  showResult('roi-result', `
+    <div class="r-main" style="color:${isPositive ? 'var(--green)' : 'var(--red)'}">${isPositive?'+':''}${roiPct.toFixed(2)}%</div>
+    <div class="r-label">Total ROI · ${fmt(totalReturn)} ${isPositive ? 'profit' : 'loss'}</div>
+    <div class="r-grid r-grid-3" style="margin-top:12px;">
+      <div class="r-cell"><strong>${fmt(initial)}</strong><span>Invested</span></div>
+      <div class="r-cell"><strong class="${isPositive?'r-positive':'r-negative'}">${fmt(final)}</strong><span>Final Value</span></div>
+      <div class="r-cell"><strong>${isPositive?'+':''}${cagr.toFixed(2)}%</strong><span>CAGR / Year</span></div>
+    </div>
+    <div class="r-detail">Annualized return (CAGR): ${cagr.toFixed(2)}% per year over ${years} years. For comparison, the S&P 500 has historically returned ~10% annually before inflation.</div>
+  `);
+}
+</script>
+</body>
+</html>
